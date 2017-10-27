@@ -14,7 +14,9 @@ const NinjaSchema = new Schema({
   available: {
     type: Boolean,
     default: false
-  }
+  },
+  long: {},
+  lat: {}
   // Add in Geo Location
 
 });

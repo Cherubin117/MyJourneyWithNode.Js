@@ -1,7 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-//Create ninja schema and model
+// Section 1 - GeoJson (Geolocation)
+
+const GeoSchema = new Schema({
+  type: {
+    type: String,
+    default: "Point"
+  };
+  coordinates: {
+    // Index - 2D Sphere GeoLocation Parameter
+    type: [Number],
+    index: "2dsphere"
+  }
+});
+
+// Section 2 - Schema And Model
 
 const NinjaSchema = new Schema({
   name: {
@@ -15,8 +29,7 @@ const NinjaSchema = new Schema({
     type: Boolean,
     default: false
   },
-  long: {},
-  lat: {}
+  geometry: GeoSchema
   // Add in Geo Location
 
 });

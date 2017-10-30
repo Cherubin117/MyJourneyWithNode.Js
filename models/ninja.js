@@ -7,7 +7,7 @@ const GeoSchema = new Schema({
   type: {
     type: String,
     default: "Point"
-  };
+  },
   coordinates: {
     // Index - 2D Sphere GeoLocation Parameter
     type: [Number],

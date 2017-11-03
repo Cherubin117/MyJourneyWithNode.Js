@@ -9,6 +9,9 @@ const app = express();
 mongoose.connect('mongodb://localhost/ninjago', { useMongoClient: true });
 mongoose.Promise = global.Promise;
 
+// React Area - Front-end Connection
+app.use(express.static('public'));
+
 // Body-parser - Request Data Access
 app.use(bodyParser.json());
 

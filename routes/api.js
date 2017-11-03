@@ -16,7 +16,7 @@ router.get('/ninjas', function(req,res,next){
 
 // Add a new ninja to the database
 router.post('/ninjas', function(req,res,next){
-
+  
     // A new Ninja object
   Ninja.create(req.body).then(function(ninja){
     res.send(ninja);
